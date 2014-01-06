@@ -66,3 +66,17 @@ message TwistStamped
   optional Header header = 1;
   required Twist twist = 2;
 }
+
+message Color
+{
+  required double red = 1;
+  required double green = 2;
+  required double blue = 3;
+  optional double alpha = 4;
+}
+
+message ColorStamped
+{
+  optional Header header = 1;
+  required Color color = 2;
+}
