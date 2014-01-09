@@ -11,4 +11,5 @@ message Spawn
   optional Twist velocity = 5; // Currently ignored!
   optional Polygon polygon_shape = 6;
   optional Cylinder cylinder_shape = 7;
+  optional Color color = 8;
 }

@@ -85,7 +85,7 @@ message Polygon
 {
   repeated Point vertices = 1;
   optional double height = 2 [default = 1];
-  optional double weight = 3 [default = 1];
+  optional double mass = 3 [default = -1];
 }
 
 message PolygonStamped
@@ -98,7 +98,7 @@ message Cylinder
 {
   required double radius = 1;
   optional double height = 2 [default = 1];
-  optional double weight = 3 [default = 1];
+  optional double mass = 3 [default = 1];
 }
 
 message CylinderStamped
