@@ -43,14 +43,6 @@ message Vibration
   required float amplitude = 3;
 }
 
-message Light
-{
-  optional Header header = 1;
-  required float r = 2;
-  required float g = 3;
-  required float b = 4;
-}
-
 message DiffDrive
 {
   optional Header header = 1;
