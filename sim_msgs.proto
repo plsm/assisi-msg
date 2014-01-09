@@ -9,7 +9,7 @@ message Spawn
   required string name = 3; // Robot name
   required Pose pose = 4;
   optional Twist velocity = 5; // Currently ignored!
-  optional Polygon polygon_shape = 6;
-  optional Cylinder cylinder_shape = 7;
+  optional Polygon polygon = 6;
+  optional Cylinder cylinder = 7;
   optional Color color = 8;
 }
