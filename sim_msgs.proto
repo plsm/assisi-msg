@@ -5,8 +5,10 @@ package AssisiMsg;
 message Spawn
 {
   optional Header header = 1;
-  required string type = 2; // Type of robot to spawn
+  required string type = 2; // Type of object to spawn
   required string name = 3; // Robot name
   required Pose pose = 4;
   optional Twist velocity = 5; // Currently ignored!
+  optional Polygon polygon_shape = 6;
+  optional Cylinder cylinder_shape = 7;
 }
