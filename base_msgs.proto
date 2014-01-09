@@ -80,3 +80,29 @@ message ColorStamped
   optional Header header = 1;
   required Color color = 2;
 }
+
+message Polygon
+{
+  repeated Point vertices = 1;
+  optional double height = 2 [default = 1];
+  optional double weight = 3 [default = 1];
+}
+
+message PolygonStamped
+{
+  optional Header header = 1;
+  required Polygon polygon = 2;
+}
+
+message Cylinder
+{
+  required double radius = 1;
+  optional double height = 2 [default = 1];
+  optional double weight = 3 [default = 1];
+}
+
+message CylinderStamped
+{
+  optional Header header = 1;
+  required Cylinder cylinder = 2;
+}
