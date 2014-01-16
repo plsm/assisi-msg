@@ -20,3 +20,6 @@
 # Emacs droppings
 \#*#
 .#*
+
+# Build folders created by dependant projects
+cpp/
