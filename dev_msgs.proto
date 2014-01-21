@@ -8,16 +8,19 @@ package AssisiMsg;
 // All sensors are assumed to be identical
 message RangeArray
 {
-  optional Header header = 1; //Message header
+  // Message header.
+  optional Header header = 1;
 
   // Range sensor types.
   enum SensorType
   {
-    IR = 0; // Infrared range sensor.
+    // Infrared range sensor.
+    IR = 0; 
   }
 
   // Type of sensor that made the reading.
   optional SensorType type = 2 [default = IR];
+  // Sensor Field of view.
   // Sensor reading is valid between -field_of_view/2 and field_of_view/2 [rad].
   // Angle 0 is sensor x-axis, default value is 30°.
   optional float field_of_view = 3 [default = 0.5236]; 
@@ -38,19 +41,36 @@ message RangeArray
 message Temperature
 {
   optional Header header = 1;
+  // Temperature value, in °C.
   required float temp = 2;
 }
 
+// Vibration value.
+// Can be either a sensor reading, or an actuator setpoint.
 message Vibration
 {
   optional Header header = 1;
+  // Vibration frequency.
   required float freq = 2;
+  // Vibration amplitude.
   required float amplitude = 3;
 }
 
+// A message specific to differential drive vehicles.
+// Specifies the vehicles left and right wheel velocity, respectively.
+// Can either be a sensor value, or an actuator command.
+// Velocities are given in cm/s and they represent the tangential velocity,
+// i.e., vel_left = w_left*r, where w is the angular velocity of the wheel
+// in rad/s, and r is the wheel radius, in cm. 
+// The resulting vehicle velocities can be calculated as: 
+// v = (vel_left+vel_right)/2 (linear velocity)
+// w = (vel_right-vel_left)/d (angular velocity),
+// where d is the inter-wheel distance (axle length).
 message DiffDrive
 {
   optional Header header = 1;
+  // Left wheel velocity.
   required double vel_left = 2;
+  // Right wheel velocity.
   required double vel_right = 3;
 }
