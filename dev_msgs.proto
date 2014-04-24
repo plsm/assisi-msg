@@ -45,6 +45,15 @@ message Temperature
   required float temp = 2;
 }
 
+// Array of Temperature values
+// Bundles readings from several temperature sensors.
+message TemperatureArray
+{
+  optional Header header = 1;
+  // Temperature value, in °C.
+  repeated float temp = 2;
+}
+
 // Vibration value.
 // Can be either a sensor reading, or an actuator setpoint.
 message Vibration
