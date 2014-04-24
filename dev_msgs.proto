@@ -74,3 +74,18 @@ message DiffDrive
   // Right wheel velocity.
   required double vel_right = 3;
 }
+
+// A message for configuring Serge's E-M devices
+message EMDeviceConfig
+{
+  optional Header header = 1;
+  // Supported operating modes
+  enum DeviceMode
+  {
+    ELECTRIC = 0;
+    MAGNETIC = 1;
+    HEAT = 2;
+  }
+  // Device operating mode
+  required DeviceMode mode = 2;
+}
