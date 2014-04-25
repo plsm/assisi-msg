@@ -65,6 +65,15 @@ message Vibration
   required float amplitude = 3;
 }
 
+// Array of vibration values.
+// Bundles readings from several vibration sensors.
+message VibrationArray
+{
+  optional Header header = 1;
+  // Frequency values, in Hz
+  repeated float temp = 2;
+}
+
 // A message specific to differential drive vehicles.
 // Specifies the vehicles left and right wheel velocity, respectively.
 // Can either be a sensor value, or an actuator command.
@@ -97,4 +106,26 @@ message EMDeviceConfig
   }
   // Device operating mode
   required DeviceMode mode = 2;
+}
+
+// Electric field properties.
+// Can be either a sensor reading, or an actuator setpoint.
+message ElectricField
+{
+  optional Header header = 1;
+  // Vibration frequency.
+  required float freq = 2;
+  // Vibration amplitude.
+  required float intensity = 3;
+}
+
+// Magnetic field properties.
+// Can be either a sensor reading, or an actuator setpoint.
+message MagneticField
+{
+  optional Header header = 1;
+  // Vibration frequency.
+  required float freq = 2;
+  // Vibration amplitude.
+  required float intensity = 3;
 }
