@@ -71,7 +71,9 @@ message VibrationArray
 {
   optional Header header = 1;
   // Frequency values, in Hz
-  repeated float temp = 2;
+  repeated float freq = 2;
+  // Amplitude values, in Hz
+  repeated float amplitude = 3;
 }
 
 // A message specific to differential drive vehicles.
