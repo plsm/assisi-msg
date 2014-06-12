@@ -131,3 +131,25 @@ message MagneticField
   // Vibration amplitude.
   required float intensity = 3;
 }
+
+// An array of object sensor readings.
+// This is a hypothetical sensor, that can determine the distance to an object, and the type of this object. This makes sense for e.g. a bee, which can differentiate between other bees and static obstacles.
+message ObjectArray
+{
+  // Message header.
+  optional Header header = 1;
+
+  // Angle 0 is sensor x-axis, default value is 30°.
+  optional float field_of_view = 3 [default = 0.5236]; 
+
+  // Values outside of [min_range, max_range] skould be discarded.
+  optional float min_range = 4 [default = 0]; 
+  optional float max_range = 5 [default = inf];
+
+  // The actual range readings
+  repeated float range = 6;  
+
+  // Object types that generated the range readings
+  repeated string type = 7;
+
+}  
