@@ -60,9 +60,11 @@ message Vibration
 {
   optional Header header = 1;
   // Vibration frequency.
-  required float freq = 2;
+  repeated float freq = 2;
   // Vibration amplitude.
-  required float amplitude = 3;
+  repeated float amplitude = 3;
+  // Amplitude standard deviation
+  repeated float amplitude_stdev = 4;
 }
 
 // Array of vibration values.
@@ -71,9 +73,7 @@ message VibrationArray
 {
   optional Header header = 1;
   // Frequency values, in Hz
-  repeated float freq = 2;
-  // Amplitude values, in Hz
-  repeated float amplitude = 3;
+  repeated Vibration reading = 2;
 }
 
 // A message specific to differential drive vehicles.
