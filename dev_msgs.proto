@@ -83,7 +83,7 @@ message VibrationReadingArray
 {
   optional Header header = 1;
   // Frequency values, in Hz
-  repeated Vibration reading = 2;
+  repeated VibrationReading reading = 2;
 }
 
 // A message specific to differential drive vehicles.
