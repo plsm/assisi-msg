@@ -54,9 +54,19 @@ message TemperatureArray
   repeated float temp = 2;
 }
 
-// Vibration value.
-// Can be either a sensor reading, or an actuator setpoint.
-message Vibration
+// Vibration actuator setpoint.
+// 
+message VibrationSetpoint
+{
+  optional Header header = 1;
+  // Vibration frequency
+  required double freq = 2;
+  // Vibration amplitude
+  optional double amplitude = 3;
+}
+
+// Vibration sensor reading.
+message VibrationReading
 {
   optional Header header = 1;
   // Vibration frequency.
@@ -67,9 +77,9 @@ message Vibration
   repeated float amplitude_stdev = 4;
 }
 
-// Array of vibration values.
+// Array of vibration sensor reading.
 // Bundles readings from several vibration sensors.
-message VibrationArray
+message VibrationReadingArray
 {
   optional Header header = 1;
   // Frequency values, in Hz
