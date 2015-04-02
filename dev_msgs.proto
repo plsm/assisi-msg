@@ -163,3 +163,13 @@ message ObjectArray
   repeated string type = 7;
 
 }  
+
+// Airflow properties
+// Message containing the airflow intensity (in percentage of maximum actuator value)
+// Intended as actuator setpoint.
+message Airflow
+{
+  optional Header header = 1;
+  // Airflow intensity (maximum actuator value percentage)
+  required float intensity = 2;
+}
