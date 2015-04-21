@@ -105,43 +105,6 @@ message DiffDrive
   required double vel_right = 3;
 }
 
-// A message for configuring Serge's E-M devices
-message EMDeviceConfig
-{
-  optional Header header = 1;
-  // Supported operating modes
-  enum DeviceMode
-  {
-    ELECTRIC = 0;
-    MAGNETIC = 1;
-    HEAT = 2;
-  }
-  // Device operating mode
-  required DeviceMode mode = 2;
-}
-
-// Electric field properties.
-// Can be either a sensor reading, or an actuator setpoint.
-message ElectricField
-{
-  optional Header header = 1;
-  // Vibration frequency.
-  required float freq = 2;
-  // Vibration amplitude.
-  required float intensity = 3;
-}
-
-// Magnetic field properties.
-// Can be either a sensor reading, or an actuator setpoint.
-message MagneticField
-{
-  optional Header header = 1;
-  // Vibration frequency.
-  required float freq = 2;
-  // Vibration amplitude.
-  required float intensity = 3;
-}
-
 // An array of object sensor readings.
 // This is a hypothetical sensor, that can determine the distance to an object, and the type of this object. This makes sense for e.g. a bee, which can differentiate between other bees and static obstacles.
 message ObjectArray
