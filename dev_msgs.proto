@@ -130,9 +130,21 @@ message ObjectArray
 // Airflow properties
 // Message containing the airflow intensity (in percentage of maximum actuator value)
 // Intended as actuator setpoint.
+// TODO: Rename this message to better reflect its meaning (actuator setpoint only)
 message Airflow
 {
   optional Header header = 1;
   // Airflow intensity (maximum actuator value percentage)
   required float intensity = 2;
+}
+
+// Airflow sensor reading
+message AirflowReading
+{
+  optional Header header = 1;
+  // Airflow intensity in l/s (litres per second)
+  required float intensity = 2;
+  // Airflow direction, in radians,
+  // relative to the sensor heading
+  required float direction = 3;
 }
