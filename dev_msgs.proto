@@ -163,3 +163,13 @@ message ObjectArray
   repeated string type = 7;
 
 }  
+
+message CircularCamera
+{
+  // Message header.
+  optional Header header = 1;
+
+  repeated float distance;
+
+  repeated Color image;
+}
