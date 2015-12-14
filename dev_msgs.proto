@@ -127,14 +127,15 @@ message ObjectArray
 
 }  
 
-message CircularCamera
+// Image captured by a circular camera
+message CircularCameraImage
 {
   // Message header.
   optional Header header = 1;
 
   repeated float distance;
 
-  repeated Color image;
+  repeated Color pixel;
 }
 
 // Airflow properties
