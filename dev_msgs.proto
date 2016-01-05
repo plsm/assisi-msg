@@ -133,9 +133,9 @@ message CircularCameraImage
   // Message header.
   optional Header header = 1;
 
-  repeated float distance;
+  repeated float distance = 2;
 
-  repeated Color pixel;
+  repeated Color pixel = 3;
 }
 
 // Airflow properties
