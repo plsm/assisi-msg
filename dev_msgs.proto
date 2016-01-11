@@ -60,12 +60,12 @@ message TemperatureWithGradient
 {
   optional Header header = 1;
   // Temperature value, in C
-  required float temp = 1;
+  required float temp = 2;
   // Temperature gradient in C/cm
-  // In absolute ("world") coordinates
+  // Relative to the object owning the sensor
   // Split into x and y directions
-  required float dtx = 2;
-  required float dty = 3;
+  required float dtx = 3;
+  required float dty = 4;
 }
 
 // Vibration actuator setpoint.
