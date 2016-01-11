@@ -54,6 +54,20 @@ message TemperatureArray
   repeated float temp = 2;
 }
 
+// Temperature with gradient
+// Sensor of temperaure value + gradient
+message TemperatureWithGradient
+{
+  optional Header header = 1;
+  // Temperature value, in C
+  required float temp = 1;
+  // Temperature gradient in C/cm
+  // In absolute ("world") coordinates
+  // Split into x and y directions
+  required float dtx = 2;
+  required float dty = 3;
+}
+
 // Vibration actuator setpoint.
 // 
 message VibrationSetpoint
