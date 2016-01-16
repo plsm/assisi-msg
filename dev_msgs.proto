@@ -142,14 +142,15 @@ message ObjectArray
 }  
 
 // Image captured by a circular camera
+// Message contains pixel information: colour and distance to detected object
 message CircularCameraImage
 {
   // Message header.
   optional Header header = 1;
-
-  repeated float distance = 2;
-
-  repeated Color pixel = 3;
+  // Distances at square (array of size pixel count)
+  repeated float zbuffer = 2;
+  // Image (array of size pixel count)
+  repeated Color image = 3;
 }
 
 // Airflow properties
