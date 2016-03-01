@@ -89,6 +89,8 @@ message VibrationReading
   repeated float amplitude = 3;
   // Amplitude standard deviation
   repeated float amplitude_stdev = 4;
+  // Maximum absolute amplitude
+  repeated float max_abs_amplitude = 5;
 }
 
 // Array of vibration sensor reading.
