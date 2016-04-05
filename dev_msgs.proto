@@ -91,6 +91,8 @@ message VibrationReading
   repeated float amplitude_stdev = 4;
   // Maximum absolute amplitude
   repeated float max_abs_amplitude = 5;
+  // Object name that caused this reading
+  repeated string source = 6;
 }
 
 // Array of vibration sensor reading.
@@ -142,16 +144,6 @@ message ObjectArray
   repeated string type = 7;
 
 }  
-
-message CircularCamera
-{
-  // Message header.
-  optional Header header = 1;
-
-  repeated float distance;
-
-  repeated Color image;
-}
 
 // Airflow properties
 // Message containing the airflow intensity (in percentage of maximum actuator value)
